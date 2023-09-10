@@ -44,7 +44,6 @@ export const BookCards: FC = () => {
       console.log(err);
     }
     dispatch(setLoading(false));
-    dispatch(setRequest(false));
   };
 
   const handleClickMore = () => {
@@ -57,6 +56,7 @@ export const BookCards: FC = () => {
 
   useEffect(() => {
     (!!query && isRequest) && booksData();
+    dispatch(setRequest(false));
   }, [isRequest]);
 
   return (

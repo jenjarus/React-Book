@@ -16,7 +16,6 @@ export const booksFetch = async (
   }
 
   const result: IBooksResponse = await response.json();
-  console.log(url);
   return result;
 };
 
