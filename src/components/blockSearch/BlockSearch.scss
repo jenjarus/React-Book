@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+
+.section-search {
+  padding: 40px 0;
+  background-color: $gray-59;
+
+  @media (max-width: 767px) {
+    padding: 20px 0;
+  }
+
+  &__wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    margin: -10px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+
+    &-item {
+      flex: 1;
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+
+.footer {
+  padding: 15px 0;
+  background: $stone-800;
+  border-top: 4px solid $google-blue;
+
+  &__wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__copy {
+    color: #fff;
+    font-size: $size-small;
+  }
+}

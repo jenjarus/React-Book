@@ -1,0 +1,37 @@
+@import "src/styles/variables";
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 20px 0;
+  background: $stone-800;
+  border-bottom: 4px solid $google-red;
+  box-shadow: $shadow-md;
+  z-index: 9;
+
+  &__wrapper {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    color: #fff;
+    font-size: 28px;
+
+    &-letter {
+      &--blue {
+        color: $google-blue;
+      }
+      &--red {
+        color: $google-red;
+      }
+      &--yellow {
+        color: $google-yellow;
+      }
+      &--green {
+        color: $google-green;
+      }
+    }
+  }
+}

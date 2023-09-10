@@ -1,0 +1,27 @@
+@import "src/styles/variables";
+
+.top-page-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: $google-yellow;
+  box-shadow: $shadow-md;
+  cursor: pointer;
+  @include hidden-block;
+  @include transition;
+
+  &:hover {
+    background-color: $google-green;
+  }
+
+  &.show {
+    @include visible-block;
+  }
+}

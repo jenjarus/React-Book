@@ -1,0 +1,52 @@
+$google-blue: #4285f4;
+$google-red: #db4437;
+$google-yellow: #f4b400;
+$google-green: #0f9d58;
+
+$stone-800: rgb(41 37 36);
+$gray-59: rgb(249 250 251);
+$gray-100: rgb(229 231 235);
+$gray-300: rgb(209 213 219);
+$gray-400: rgb(156 163 175);
+$gray-500: rgb(107 114 128);
+$gray-600: rgb(75 85 99);
+
+$size-heading: 28px;
+$size-heading-mobile: 24px;
+$size-small: 14px;
+
+$shadow-md: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+@mixin transition() {
+  transition: all 0.3s;
+}
+
+@mixin input-style() {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  background-color: #fff;
+  border: 1px solid $gray-100;
+  line-height: 40px;
+  @include transition;
+
+  &:hover {
+    border-color: $gray-400;
+  }
+
+  &:focus {
+    border-color: $gray-600;
+  }
+}
+
+@mixin hidden-block() {
+  visibility: hidden;
+  opacity: 0;
+  @include transition;
+}
+
+@mixin visible-block() {
+  visibility: visible;
+  opacity: 1;
+}
