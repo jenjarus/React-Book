@@ -1,43 +1,29 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import { IBookResponse } from "../../utils/types";
-import { bookFetch } from "../../utils/fetch";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { NotFoundPage } from "../notFoundPage/NotFoundPage";
 import { BookCharItem } from "../../components/bookCharItem/BookCharItem";
 import { Loading } from "../../components/loading/Loading";
 import { ReactComponent as IconArrowLeft } from "../../assets/arrow-left.svg";
 import "./BookPage.scss";
+import { fetchBook } from "../../redux/book";
 
 export const BookPage: FC = () => {
   const params = useParams();
   const id: string = params.id || "";
 
-  const [dataBook, setDataBook] = useState<IBookResponse>();
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [isEmpty, setIsEmpty] = useState<boolean>(false);
-
-  const bookData = async () => {
-    setIsLoading(true);
-    try {
-      const data: IBookResponse = await bookFetch(id);
-      setDataBook(data);
-      setIsLoading(false);
-    } catch (err) {
-      console.log(err);
-      setIsEmpty(true);
-    }
-  };
+  const dispatch = useAppDispatch();
+  const dataBook = useAppSelector((state) => state.book);
 
   useEffect(() => {
-    setIsEmpty(false);
-    bookData();
-  }, []);
+    if (id) dispatch(fetchBook(id));
+  }, [dispatch, id]);
 
-  return isEmpty ? (
+  return dataBook.isError ? (
     <NotFoundPage />
   ) : (
     <div className="book-page">
-      {!dataBook && isLoading ? <Loading /> : <></>}
+      {dataBook.isLoading ? <Loading /> : <></>}
       {!!dataBook ? (
         <div className="book-page__return">
           <div className="container">

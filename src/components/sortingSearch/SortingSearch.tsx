@@ -1,6 +1,7 @@
 import React, { FC } from "react";
-import { clearDataBooks, setSorting } from "../../redux/search";
+import { setSorting } from "../../redux/search";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { clearDataBooks } from "../../redux/books";
 import { IListSearchSelect } from "../../utils/types";
 import { SelectSearch } from "../selectSearch/SelectSearch";
 import "./SortingSearch.scss";

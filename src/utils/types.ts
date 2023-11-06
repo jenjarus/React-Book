@@ -1,9 +1,9 @@
 export interface IVolumeInfo {
   title: string;
-  authors?: string[];
-  categories?: string[];
-  imageLinks?: {
-    thumbnail?: string;
+  authors: string[];
+  categories: string[];
+  imageLinks: {
+    thumbnail: string;
   };
 }
 
@@ -16,15 +16,36 @@ export interface IBooksResponse {
   totalItems: number;
 }
 
+export interface IBooksState {
+  items: IBooksCard[];
+  totalItems: number;
+  countBooks: number;
+  isError: boolean;
+  isLoading: boolean;
+}
+
 export interface IBookResponse {
   volumeInfo: IVolumeInfo & {
-    description?: string;
+    description: string;
     publishedDate: string;
-    imageLinks?: {
-      medium?: string;
-      small?: string;
+    imageLinks: {
+      medium: string;
+      small: string;
     };
   };
+}
+
+export interface IBookState {
+  volumeInfo: IVolumeInfo & {
+    description: string;
+    publishedDate: string;
+    imageLinks: {
+      medium: string;
+      small: string;
+    };
+  };
+  isError: boolean;
+  isLoading: boolean;
 }
 
 export interface IListSearchSelect {

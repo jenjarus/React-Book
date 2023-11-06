@@ -1,5 +1,5 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";
 import { TopPageButton } from "../topPageButton/TopPageButton";
@@ -10,6 +10,12 @@ import "../../styles/reset.scss";
 import "./App.css";
 
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // при переходе на новую страницу, прокручивать на самый верх
+  }, [pathname]);
+
   return (
     <div className="App">
       <Header />

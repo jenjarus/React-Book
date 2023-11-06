@@ -1,6 +1,4 @@
 import { FC, useEffect, useRef, useState } from "react";
-import {useAppDispatch} from "../../redux/hooks";
-import {setRequest} from "../../redux/search";
 import { IListSearchSelect } from "../../utils/types";
 import { ReactComponent as IconArrowDown } from "../../assets/arrow-down.svg";
 import "./SelectSearch.scss";
@@ -13,7 +11,6 @@ interface ISelectSearch {
 }
 
 export const SelectSearch: FC<ISelectSearch> = ({ title, data, currentValue, handler }) => {
-  const dispatch = useAppDispatch();
   const [currentOptionName, setCurrentOptionName] = useState(data[0].title);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const refSelect = useRef<HTMLDivElement>(null);
@@ -27,7 +24,6 @@ export const SelectSearch: FC<ISelectSearch> = ({ title, data, currentValue, han
   const handleSelect = (value: string) => {
     setCurrentOptionName(value);
     setIsOpen(false);
-    dispatch(setRequest(true));
   };
 
   const handleOpen = () => {

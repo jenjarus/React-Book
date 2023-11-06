@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import { clearDataBooks, setCategory } from "../../redux/search";
+import { setCategory } from "../../redux/search";
+import { clearDataBooks } from "../../redux/books";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { SelectSearch } from "../selectSearch/SelectSearch";
 import { IListSearchSelect } from "../../utils/types";

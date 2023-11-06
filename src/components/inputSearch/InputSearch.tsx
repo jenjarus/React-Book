@@ -1,6 +1,7 @@
 import { ChangeEventHandler, FC, KeyboardEventHandler, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import {setQuery, setRequest} from "../../redux/search";
+import { setQuery } from "../../redux/search";
+import { clearDataBooks } from "../../redux/books";
 import { ReactComponent as IconSearch } from "../../assets/search.svg";
 import "./InputSearch.scss";
 
@@ -19,7 +20,7 @@ export const InputSearch: FC = () => {
     if (value.trim()) {
       const formattedText: string = value.split(" ").join("+");
       dispatch(setQuery(formattedText));
-      dispatch(setRequest(true));
+      dispatch(clearDataBooks());
       setIsError(false);
     } else {
       setIsError(true);
