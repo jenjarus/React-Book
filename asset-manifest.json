@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-Book/static/css/main.06bd8e8a.css",
-    "main.js": "/React-Book/static/js/main.87f9a2ab.js",
+    "main.js": "/React-Book/static/js/main.ab01f2ba.js",
     "static/media/loading.svg": "/React-Book/static/media/loading.299d780439d2a9a582afaf4606a8537e.svg",
     "index.html": "/React-Book/index.html",
     "static/media/search.svg": "/React-Book/static/media/search.2d271b2adb10dbcf8cc7efce5fe1cfe0.svg",
@@ -9,10 +9,10 @@
     "static/media/arrow-left.svg": "/React-Book/static/media/arrow-left.32c80e5f461c61df7254dedd8c31a8c8.svg",
     "static/media/arrow-down.svg": "/React-Book/static/media/arrow-down.624ac874189980fcea6612c09e195471.svg",
     "main.06bd8e8a.css.map": "/React-Book/static/css/main.06bd8e8a.css.map",
-    "main.87f9a2ab.js.map": "/React-Book/static/js/main.87f9a2ab.js.map"
+    "main.ab01f2ba.js.map": "/React-Book/static/js/main.ab01f2ba.js.map"
   },
   "entrypoints": [
     "static/css/main.06bd8e8a.css",
-    "static/js/main.87f9a2ab.js"
+    "static/js/main.ab01f2ba.js"
   ]
 }
